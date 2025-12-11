@@ -6,6 +6,18 @@
     <title>Gift for Pianoman</title>
 </head>
 <body>
+    <div id="clickerContainter">
+        <h1>Title uhh come up with a name</h1>
+        <p>Notes: <span id="money">0</span></p>
+        <img src="replaceTS.png" alt="click mee" id="ogPerson" onclick="clicked()">
+    </div>
+    <div id="shopContainer">
+        <h2>Shop</h2>
+        <p>Money per click: <span id="mpc">1</span></p>
+        <button onclick="upgradeMPC()">Upgrade MPC (Cost: <span id="mpcCost">10</span> notes)</button>
+        <P>Money per second: <span id="mps">0</span></P>
+        <button onclick="buyMPS()">Buy MPS (Cost: <span id="mpsCost">50</span> notes)</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

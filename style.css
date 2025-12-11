@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#clickerContainer, #shopContainer {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+}
