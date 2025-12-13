@@ -10,6 +10,14 @@ const mpcCostDisplay = document.getElementById("mpcCost");
 const mpsDisplay = document.getElementById("mps");
 const mpsCostDisplay = document.getElementById("mpsCost");
 
+const lastGoneDisplay = document.getElementById("lastGone");
+const lastVisit = localStorage.getItem("lastVisit");
+if (lastVisit) {
+    const diff = Date.now() - Number(lastVisit);
+    lastGoneDisplay.textContent = Math.floor(diff/1000);
+}
+localStorage.setItem("lastVisit", Date.now());
+
 function updateDisplay() {
     moneyDisplay.textContent = money;
     mpcDisplay.textContent = mpc;
