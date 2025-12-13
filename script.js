@@ -16,8 +16,10 @@ if (lastVisit) {
     const diff = Date.now() - Number(lastVisit);
     lastGoneDisplay.textContent = Math.floor(diff/1000);
 }
-window.addEventListener('beforeunload', function() {
-    this.confirm("You may lose progress if you leave this website (unless the localStorage function is properly built)");
+window.addEventListener('beforeunload', function(e) {
+    e.preventDefault();
+    e.returnValue = '';//chrome requires this
+    
     localStorage.setItem("lastVisit", Date.now());
 });
 
