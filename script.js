@@ -3,12 +3,27 @@ let mpc = 1;
 let mpcCost = 10;
 let mps = 0;
 let mpsCost = 50;
+let level = 0;
 
 const moneyDisplay = document.getElementById("money");
 const mpcDisplay = document.getElementById("mpc");
 const mpcCostDisplay = document.getElementById("mpcCost");
 const mpsDisplay = document.getElementById("mps");
 const mpsCostDisplay = document.getElementById("mpsCost");
+const mpsMessage = document.getElementById("upgradeMessage");
+
+const pianoPlayer = document.getElementById("piano");
+
+const upgrades = [
+    "The stage is empty, add something",
+    "A bassline is so boring, upgrade your piano player",
+    "Add some drums",
+    "I want that harmonica",
+    "Where's the rest of the drumset",
+    "Give the pianist a buff",
+    "Now where's the melody",
+    "Now perform"
+]
 
 const lastGoneDisplay = document.getElementById("lastGone");
 const lastVisit = localStorage.getItem("lastVisit");
@@ -29,6 +44,7 @@ function updateDisplay() {
     mpcCostDisplay.textContent = mpcCost;
     mpsDisplay.textContent = mps;
     mpsCostDisplay.textContent = mpsCost;
+    mpsMessage.textContent = upgrades[level];
 }
 
 function clickCookie() {
@@ -52,6 +68,7 @@ function buyMPS() {
         money -= mpsCost;
         mps++;
         mpsCost *= 2;
+        level++;
         setInterval(function() {
             money += mps;
             updateDisplay();

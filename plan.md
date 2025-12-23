@@ -2,8 +2,8 @@ layers:
 1. bass
 2. chords
 3. hi hat pedal + bass drum pedals (tbd)
-4. rest of the kit (tbd)
-5. harmonica
+4. harmonica
+5. rest of the kit (tbd)
 6. flexing piano
 7. ocarina
 

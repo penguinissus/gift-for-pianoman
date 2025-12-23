@@ -7,7 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="clickerContainter">
+    <div id="test" onclick="clickCookie()">
+        <img src="images/stageTemporary.jpg" alt="stage" class="stage"/>
+        <img src="images/pianoTemporary.webp" alt="piano" class="piano" id="piano"/>
+        <h1 class="title">Clicker Game - click anywhere</h1>
+        <p class="totalMoney">Notes: <span id="money">0</span></p>
+        <h2 class="shop">Shop</h2>
+        <p class="mpc">Money per click: <span id="mpc">1</span></p>
+        <button class="upgradeMPC" onclick="upgradeMPC()">Upgrade MPC (Cost: <span id="mpcCost">10</span> notes)</button>
+        <P class="mps">Money per second: <span id="mps">0</span></P>
+        <button class="upgradeMPS" onclick="buyMPS()"><span id="upgradeMessage">The stage is empty, add something</span> (Cost: <span id="mpsCost">50</span> notes)</button>
+    </div>
+    <div id="clickerContainter" onclick="clickCookie()">
         <h1>Title uhh come up with a name</h1>
         <p>Notes: <span id="money">0</span></p>
         <img src="replaceTS.png" alt="click mee" id="ogPerson" onclick="clickCookie()">
@@ -17,7 +28,7 @@
         <p>Money per click: <span id="mpc">1</span></p>
         <button onclick="upgradeMPC()">Upgrade MPC (Cost: <span id="mpcCost">10</span> notes)</button>
         <P>Money per second: <span id="mps">0</span></P>
-        <button onclick="buyMPS()">Buy MPS (Cost: <span id="mpsCost">50</span> notes)</button>
+        <button onclick="buyMPS()"><span id="upgradeMessage">The stage is empty, add something</span> (Cost: <span id="mpsCost">50</span> notes)</button>
     </div>
     <div id="testing">
         <p>You were gone for <span id="goneTime">0</span> seconds</p>
