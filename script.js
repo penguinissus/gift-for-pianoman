@@ -72,12 +72,6 @@ async function clickCookie() {
         playSound('track7', 'audio/track7.mp3');
         isPlaying = true;
     }
-    if(trackGains.track1) {
-        console.log(trackGains.track1.gain.value);
-    } else {
-        console.log(trackGains.track1);
-        console.log(trackGains);
-    }
     updateDisplay();
 }
 async function playSound(name, url) {
@@ -101,7 +95,6 @@ function upgradeMPC() {
         mpc++;
         mpcCost *= 2;
         updateDisplay();
-        trackGains.track1.gain.value = 1;
     } else {
         alert("Not enough money to upgrade!");
     }
@@ -113,6 +106,28 @@ function buyMPS() {
         mps++;
         mpsCost *= 2;
         level++;
+        if (level == 1) {
+            pianist.style.visibility = "visible";
+            trackGains.track1.gain.value = 1;
+        } else if (level == 2) {
+            pianist.src = "images/pianoTemporary.webp";
+            trackGains.track2.gain.value = 1;
+        } else if (level == 3) {
+            drummer.style.visibility = "visible";
+            trackGains.track3.gain.value = 1;
+        } else if (level == 4) {
+            harmonicaPlayer.style.visibility = "visible";
+            trackGains.track4.gain.value = 1;
+        } else if (level == 5) {
+            drummer.src = "images/pianoTemporary.webp";
+            trackGains.track5.gain.value = 1;
+        } else if (level == 6) {
+            pianist.src = "images/pianoTemporary.webp";
+            trackGains.track6.gain.value = 1;
+        } else if (level == 7) {
+            ocarinaPlayer.style.visibility = "visible";
+            trackGains.track7.gain.value = 1;
+        }
         setInterval(function() {
             money += mps;
             updateDisplay();
