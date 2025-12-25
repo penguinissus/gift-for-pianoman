@@ -110,7 +110,7 @@ function buyMPS() {
             pianist.style.visibility = "visible";
             trackGains.track1.gain.value = 1;
         } else if (level == 2) {
-            pianist.src = "images/pianoTemporary.webp";
+            pianist.src = "images/piano2.png";
             trackGains.track2.gain.value = 1;
         } else if (level == 3) {
             drummer.style.visibility = "visible";
@@ -119,10 +119,10 @@ function buyMPS() {
             harmonicaPlayer.style.visibility = "visible";
             trackGains.track4.gain.value = 1;
         } else if (level == 5) {
-            drummer.src = "images/pianoTemporary.webp";
+            drummer.src = "images/drums2.png";
             trackGains.track5.gain.value = 1;
         } else if (level == 6) {
-            pianist.src = "images/pianoTemporary.webp";
+            pianist.src = "images/piano3.png";
             trackGains.track6.gain.value = 1;
         } else if (level == 7) {
             ocarinaPlayer.style.visibility = "visible";

@@ -70,37 +70,39 @@
 
 .piano {
     position: absolute;
-    top: 75%;
-    left: 35%;
-    width: 5%;
-    height: 10%;
+    top: 5%;
+    left: 23%;
+    width: 25%;
+    height: 85%;
     visibility: hidden;
 }
 
 .drums {
     position: absolute;
-    width: 5%;
-    height: 10%;
-    top: 80%;
-    left: 25%;
+    width: 16%;
+    height: 60%;
+    top: 23%;
+    left: 53%;
     visibility: hidden;
+    transform: scaleX(-1);
 }
 
 .harmonica {
     position: absolute;
-    width: 5%;
-    height: 10%;
-    top: 77%;
-    left: 60%;
+    width: 8%;
+    height: 30%;
+    top: 40%;
+    left: 70%;
+    transform: scaleX(-1);
     visibility: hidden;
 }
 
 .ocarina {
     position: absolute;
-    width: 5%;
-    height: 10%;
-    top: 76%;
-    left: 48%;
+    width: 10%;
+    height: 40%;
+    top: 33%;
+    left: 45%;
     visibility: hidden;
 }
 
