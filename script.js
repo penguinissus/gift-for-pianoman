@@ -3,7 +3,7 @@ let mpc = 1;
 let mpcCost = 10;
 let mps = 0;
 let mpsCost = 50;
-let level = 7;
+let level = 0;
 
 const moneyDisplay = document.getElementById("money");
 const mpcDisplay = document.getElementById("mpc");
@@ -54,7 +54,7 @@ const upgrades = [
 // });
 
 function updateDisplay() {
-    moneyDisplay.textContent = level;
+    moneyDisplay.textContent = money;
     mpcDisplay.textContent = mpc;
     mpcCostDisplay.textContent = mpcCost;
     mpsDisplay.textContent = mps;
