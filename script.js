@@ -54,7 +54,7 @@ const upgrades = [
 // });
 
 function updateDisplay() {
-    moneyDisplay.textContent = money;
+    moneyDisplay.textContent = level;
     mpcDisplay.textContent = mpc;
     mpcCostDisplay.textContent = mpcCost;
     mpsDisplay.textContent = mps;
