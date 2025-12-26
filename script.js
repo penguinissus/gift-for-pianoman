@@ -3,7 +3,7 @@ let mpc = 1;
 let mpcCost = 10;
 let mps = 0;
 let mpsCost = 50;
-let level = 0;
+let level = 7;
 
 const moneyDisplay = document.getElementById("money");
 const mpcDisplay = document.getElementById("mpc");
