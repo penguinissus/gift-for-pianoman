@@ -12,6 +12,12 @@ const mpsDisplay = document.getElementById("mps");
 const mpsCostDisplay = document.getElementById("mpsCost");
 const mpsMessage = document.getElementById("upgradeMessage");
 
+const hide1 = document.getElementById("hide1");
+const hide2 = document.getElementById("hide2");
+const hide3 = document.getElementById("hide3");
+const hide4 = document.getElementById("hide4");
+const shop = document.getElementById("shop");
+
 const pianist = document.getElementById("piano");
 const drummer = document.getElementById("drums");
 const harmonicaPlayer = document.getElementById("harmonica");
@@ -133,6 +139,12 @@ function buyMPS() {
             ocarinaPlayer.style.visibility = "visible";
             trackGains.track6.gain.value = 0;
             trackGains.track7.gain.value = 1;
+        } else if (level == 8) {
+            hide1.visibility = "hidden";
+            hide2.visibility = "hidden";
+            hide3.visibility = "hidden";
+            hide4.visibility = "hidden";
+            shop.textContent = "Thanks for playing! Now enjoy eternal music.";
         }
         setInterval(function() {
             money += mps;

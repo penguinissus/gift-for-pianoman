@@ -20,11 +20,11 @@
         <h1 class="title">The stage is yours</h1>
         <h1 class="subtitle">click anywhere</h1>
         <p class="totalMoney">Notes: <span id="money">0</span></p>
-        <h2 class="shop">Shop:</h2>
-        <p class="mpc">Notes per click: <span id="mpc">1</span></p>
-        <button class="upgradeMPC" onclick="upgradeMPC()">Upgrade Click (Cost: <span id="mpcCost">10</span> notes)</button>
-        <P class="mps">Notes per second: <span id="mps">0</span></P>
-        <button class="upgradeMPS" onclick="buyMPS()"><span id="upgradeMessage">The stage is empty, add something</span> (Cost: <span id="mpsCost">50</span> notes)</button>
+        <h2 class="shop" id="shop">Shop:</h2>
+        <p class="mpc" id="hide1">Notes per click: <span id="mpc">1</span></p>
+        <button class="upgradeMPC" id="hide2" onclick="upgradeMPC()">Upgrade Click (Cost: <span id="mpcCost">10</span> notes)</button>
+        <P class="mps" id="hide3">Notes per second: <span id="mps">0</span></P>
+        <button class="upgradeMPS" id="hide4" onclick="buyMPS()"><span id="upgradeMessage">The stage is empty, add something</span> (Cost: <span id="mpsCost">50</span> notes)</button>
     </div>
     <div id="clickerContainter" onclick="clickCookie()">
         <h1>Title uhh come up with a name</h1>
