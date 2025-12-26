@@ -111,21 +111,27 @@ function buyMPS() {
             trackGains.track1.gain.value = 1;
         } else if (level == 2) {
             pianist.src = "images/piano2.png";
+            trackGains.track1.gain.value = 0;
             trackGains.track2.gain.value = 1;
         } else if (level == 3) {
             drummer.style.visibility = "visible";
+            trackGains.track2.gain.value = 0;
             trackGains.track3.gain.value = 1;
         } else if (level == 4) {
             harmonicaPlayer.style.visibility = "visible";
+            trackGains.track3.gain.value = 0;
             trackGains.track4.gain.value = 1;
         } else if (level == 5) {
             drummer.src = "images/drums2.png";
+            trackGains.track4.gain.value = 0;
             trackGains.track5.gain.value = 1;
         } else if (level == 6) {
             pianist.src = "images/piano3.png";
+            trackGains.track5.gain.value = 0;
             trackGains.track6.gain.value = 1;
         } else if (level == 7) {
             ocarinaPlayer.style.visibility = "visible";
+            trackGains.track6.gain.value = 0;
             trackGains.track7.gain.value = 1;
         }
         setInterval(function() {

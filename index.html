@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift for Pianoman</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+    </style>
 </head>
 <body>
     <div id="test" onclick="clickCookie()">
@@ -14,12 +17,13 @@
         <img src="images/harmonica.png" alt="harmonica" class="harmonica" id="harmonica"/>
         <img src="images/singer.png" alt="ocarina" class="ocarina" id="ocarina"/>
 
-        <h1 class="title">Clicker Game - click anywhere</h1>
+        <h1 class="title">The stage is yours</h1>
+        <h1 class="subtitle">click anywhere</h1>
         <p class="totalMoney">Notes: <span id="money">0</span></p>
-        <h2 class="shop">Shop</h2>
-        <p class="mpc">Money per click: <span id="mpc">1</span></p>
-        <button class="upgradeMPC" onclick="upgradeMPC()">Upgrade MPC (Cost: <span id="mpcCost">10</span> notes)</button>
-        <P class="mps">Money per second: <span id="mps">0</span></P>
+        <h2 class="shop">Shop:</h2>
+        <p class="mpc">Notes per click: <span id="mpc">1</span></p>
+        <button class="upgradeMPC" onclick="upgradeMPC()">Upgrade Click (Cost: <span id="mpcCost">10</span> notes)</button>
+        <P class="mps">Notes per second: <span id="mps">0</span></P>
         <button class="upgradeMPS" onclick="buyMPS()"><span id="upgradeMessage">The stage is empty, add something</span> (Cost: <span id="mpsCost">50</span> notes)</button>
     </div>
     <div id="clickerContainter" onclick="clickCookie()">
