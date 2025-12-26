@@ -139,11 +139,11 @@ function buyMPS() {
             ocarinaPlayer.style.visibility = "visible";
             trackGains.track6.gain.value = 0;
             trackGains.track7.gain.value = 1;
-        } else if (level == 8) {
-            hide1.visibility = "hidden";
-            hide2.visibility = "hidden";
-            hide3.visibility = "hidden";
-            hide4.visibility = "hidden";
+        } else if (level > 7) {
+            hide1.style.visibility = "hidden";
+            hide2.style.visibility = "hidden";
+            hide3.style.visibility = "hidden";
+            hide4.style.visibility = "hidden";
             shop.textContent = "Thanks for playing! Now enjoy eternal music.";
         }
         setInterval(function() {
