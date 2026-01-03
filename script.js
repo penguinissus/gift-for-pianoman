@@ -4,6 +4,7 @@ let mpcCost = 10;
 let mps = 0;
 let mpsCost = 50;
 let level = 0;
+let theme = 0;
 
 const moneyDisplay = document.getElementById("money");
 const mpcDisplay = document.getElementById("mpc");
@@ -22,8 +23,11 @@ const pianist = document.getElementById("piano");
 const drummer = document.getElementById("drums");
 const harmonicaPlayer = document.getElementById("harmonica");
 const ocarinaPlayer = document.getElementById("ocarina");
+const toggleButton = document.getElementById("toggle");
 
 const trackNames = ["track1", "track2", "track3", "track4", "track5", "track6", "track7"];
+const trackLink = ["audio/track1.mp3", "audio/track2.mp3", "audio/track3.mp3", "audio/track4.mp3", "audio/track5.mp3", "audio/track6.mp3", "audio/track7.mp3"];
+const trackLink2 = ["audio/track1.mp3", "audio/track2.mp3", "audio/track3.mp3", "audio/track4.mp3", "audio/track5.mp3", "audio/track6.mp3", "audio/track7.mp3"];
 const trackGains = {};
 
 let ctx;
@@ -62,6 +66,56 @@ function updateDisplay() {
     mpsMessage.textContent = upgrades[level];
 }
 
+function toggle() {
+    if (theme == 0) { //currently not christmas
+        if (level == 1) {
+            trackGains.track1a.gain.value = 0;
+            trackGains.track1.gain.value = 1;
+        } else if (level == 2) {
+            trackGains.track2a.gain.value = 0;
+            trackGains.track2.gain.value = 1;
+        } else if (level == 3) {
+            trackGains.track3a.gain.value = 0;
+            trackGains.track3.gain.value = 1;
+        } else if (level == 4) {
+            trackGains.track4a.gain.value = 0;
+            trackGains.track4.gain.value = 1;
+        } else if (level == 5) {
+            trackGains.track5a.gain.value = 0;
+            trackGains.track5.gain.value = 1;
+        } else if (level == 6) {
+            trackGains.track6a.gain.value = 0;
+            trackGains.track6.gain.value = 1;
+        } else if (level == 7) {
+            trackGains.track7a.gain.value = 0;
+            trackGains.track7.gain.value = 1;
+        }
+    } else if (theme == 1) { //currently christmas themed
+        if (level == 1) {
+            trackGains.track1.gain.value = 0;
+            trackGains.track1a.gain.value = 1;
+        } else if (level == 2) {
+            trackGains.track2.gain.value = 0;
+            trackGains.track2a.gain.value = 1;
+        } else if (level == 3) {
+            trackGains.track3.gain.value = 0;
+            trackGains.track3a.gain.value = 1;
+        } else if (level == 4) {
+            trackGains.track4.gain.value = 0;
+            trackGains.track4a.gain.value = 1;
+        } else if (level == 5) {
+            trackGains.track5.gain.value = 0;
+            trackGains.track5a.gain.value = 1;
+        } else if (level == 6) {
+            trackGains.track6.gain.value = 0;
+            trackGains.track6a.gain.value = 1;
+        } else if (level == 7) {
+            trackGains.track7.gain.value = 0;
+            trackGains.track7a.gain.value = 1;
+        }
+    }
+}
+
 async function clickCookie() {
     money += mpc;
     if (!ctx) {
@@ -76,6 +130,13 @@ async function clickCookie() {
         playSound('track5', 'audio/track5.mp3');
         playSound('track6', 'audio/track6.mp3');
         playSound('track7', 'audio/track7.mp3');
+        playSound('track1a', 'audio/track1.mp3');
+        playSound('track2a', 'audio/track2.mp3');
+        playSound('track3a', 'audio/track3.mp3');
+        playSound('track4a', 'audio/track4.mp3');
+        playSound('track5a', 'audio/track5.mp3');
+        playSound('track6a', 'audio/track6.mp3');
+        playSound('track7a', 'audio/track7.mp3');
         isPlaying = true;
     }
     updateDisplay();
@@ -112,39 +173,76 @@ function buyMPS() {
         mps++;
         mpsCost *= 2;
         level++;
-        if (level == 1) {
-            pianist.style.visibility = "visible";
-            trackGains.track1.gain.value = 1;
-        } else if (level == 2) {
-            pianist.src = "images/piano2.png";
-            trackGains.track1.gain.value = 0;
-            trackGains.track2.gain.value = 1;
-        } else if (level == 3) {
-            drummer.style.visibility = "visible";
-            trackGains.track2.gain.value = 0;
-            trackGains.track3.gain.value = 1;
-        } else if (level == 4) {
-            harmonicaPlayer.style.visibility = "visible";
-            trackGains.track3.gain.value = 0;
-            trackGains.track4.gain.value = 1;
-        } else if (level == 5) {
-            drummer.src = "images/drums2.png";
-            trackGains.track4.gain.value = 0;
-            trackGains.track5.gain.value = 1;
-        } else if (level == 6) {
-            pianist.src = "images/piano3.png";
-            trackGains.track5.gain.value = 0;
-            trackGains.track6.gain.value = 1;
-        } else if (level == 7) {
-            ocarinaPlayer.style.visibility = "visible";
-            trackGains.track6.gain.value = 0;
-            trackGains.track7.gain.value = 1;
-        } else if (level > 7) {
-            hide1.style.visibility = "hidden";
-            hide2.style.visibility = "hidden";
-            hide3.style.visibility = "hidden";
-            hide4.style.visibility = "hidden";
-            shop.textContent = "Thanks for playing! Now enjoy eternal music.";
+        if (theme == 0) {
+            if (level == 1) {
+                pianist.style.visibility = "visible";
+                trackGains.track1.gain.value = 1;
+            } else if (level == 2) {
+                pianist.src = "images/piano2.png";
+                trackGains.track1.gain.value = 0;
+                trackGains.track2.gain.value = 1;
+            } else if (level == 3) {
+                drummer.style.visibility = "visible";
+                trackGains.track2.gain.value = 0;
+                trackGains.track3.gain.value = 1;
+            } else if (level == 4) {
+                harmonicaPlayer.style.visibility = "visible";
+                trackGains.track3.gain.value = 0;
+                trackGains.track4.gain.value = 1;
+            } else if (level == 5) {
+                drummer.src = "images/drums2.png";
+                trackGains.track4.gain.value = 0;
+                trackGains.track5.gain.value = 1;
+            } else if (level == 6) {
+                pianist.src = "images/piano3.png";
+                trackGains.track5.gain.value = 0;
+                trackGains.track6.gain.value = 1;
+            } else if (level == 7) {
+                ocarinaPlayer.style.visibility = "visible";
+                trackGains.track6.gain.value = 0;
+                trackGains.track7.gain.value = 1;
+            } else if (level > 7) {
+                hide1.style.visibility = "hidden";
+                hide2.style.visibility = "hidden";
+                hide3.style.visibility = "hidden";
+                hide4.style.visibility = "hidden";
+                shop.textContent = "Thanks for playing! Now enjoy eternal music.";
+            }
+        } else if (theme == 1) {
+            if (level == 1) {
+                pianist.style.visibility = "visible";
+                trackGains.track1a.gain.value = 1;
+            } else if (level == 2) {
+                pianist.src = "images/piano2.png";
+                trackGains.track1a.gain.value = 0;
+                trackGains.track2a.gain.value = 1;
+            } else if (level == 3) {
+                drummer.style.visibility = "visible";
+                trackGains.track2a.gain.value = 0;
+                trackGains.track3a.gain.value = 1;
+            } else if (level == 4) {
+                harmonicaPlayer.style.visibility = "visible";
+                trackGains.track3a.gain.value = 0;
+                trackGains.track4a.gain.value = 1;
+            } else if (level == 5) {
+                drummer.src = "images/drums2.png";
+                trackGains.track4a.gain.value = 0;
+                trackGains.track5a.gain.value = 1;
+            } else if (level == 6) {
+                pianist.src = "images/piano3.png";
+                trackGains.track5a.gain.value = 0;
+                trackGains.track6a.gain.value = 1;
+            } else if (level == 7) {
+                ocarinaPlayer.style.visibility = "visible";
+                trackGains.track6a.gain.value = 0;
+                trackGains.track7a.gain.value = 1;
+            } else if (level > 7) {
+                hide1.style.visibility = "hidden";
+                hide2.style.visibility = "hidden";
+                hide3.style.visibility = "hidden";
+                hide4.style.visibility = "hidden";
+                shop.textContent = "Thanks for playing! Now enjoy eternal music.";
+            }
         }
         setInterval(function() {
             money += mps;

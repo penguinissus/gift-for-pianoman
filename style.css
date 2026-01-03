@@ -41,8 +41,17 @@
     color: white;
     font-size: 10vh;
     top: 5%;
-    right: 5%;
+    right: 10%;
     font-family: "Jersey 10";
+}
+
+.toggle {
+    position: absolute;
+    width: 5%;
+    height: auto;
+    top: 5%;
+    right: 3%;
+    cursor: pointer;
 }
 
 .shop {
